@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Topic {
+  id        Int    @id @default(autoincrement())
+  nameRu    String
+  nameEn    String
+  nameUz    String
+  sortOrder Int    @default(0)
+  terms     Term[]
+}
+
+model Term {
+  id           Int      @id @default(autoincrement())
+  termRu       String   @default("")
+  termEn       String   @default("")
+  termUz       String   @default("")
+  definitionRu String   @default("")
+  definitionEn String   @default("")
+  definitionUz String   @default("")
+  exampleRu    String   @default("")
+  exampleEn    String   @default("")
+  exampleUz    String   @default("")
+  // Lower-cased, normalised copy of names and definitions. SQLite's LIKE is
+  // case-insensitive for ASCII only, so Cyrillic search goes through this column.
+  searchText   String   @default("")
+  topicId      Int?
+  topic        Topic?   @relation(fields: [topicId], references: [id])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  relationsFrom TermRelation[] @relation("from")
+  relationsTo   TermRelation[] @relation("to")
+
+  @@index([topicId])
+}
+
+// One row per pair, read in both directions.
+model TermRelation {
+  id     Int    @id @default(autoincrement())
+  fromId Int
+  toId   Int
+  type   String
+  from   Term   @relation("from", fields: [fromId], references: [id], onDelete: Cascade)
+  to     Term   @relation("to", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@unique([fromId, toId])
+}

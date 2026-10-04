@@ -1,0 +1,55 @@
+{
+  "appTitle": "Islamic Finance Dictionary",
+  "nav": { "dictionary": "Dictionary", "add": "Add a term", "topics": "Topics" },
+  "language": "Language",
+  "textSize": { "label": "Text size", "small": "Small", "normal": "Normal", "large": "Large" },
+  "search": { "label": "Search", "hint": "Type a word in any of the three languages", "clear": "Clear search" },
+  "allTopics": "All topics",
+  "noTopic": "No topic",
+  "found": "Terms found: {{count}}",
+  "empty": "Nothing found. Try a different word or clear the search.",
+  "loading": "Loading...",
+  "loadError": "Could not load data. Check that the server is running.",
+  "notFound": "Term not found.",
+  "back": "Back to dictionary",
+  "lang": { "ru": "Russian", "en": "English", "uz": "Uzbek" },
+  "field": { "term": "Term", "definition": "Definition", "example": "Example", "topic": "Topic" },
+  "notFilled": "not filled in",
+  "related": {
+    "title": "Related terms",
+    "find": "Find a term to link",
+    "type": "Relation type",
+    "none": "No related terms yet."
+  },
+  "relation": { "SEE_ALSO": "See also", "SYNONYM": "Synonyms", "ANTONYM": "Antonyms" },
+  "relationOne": { "SEE_ALSO": "See also", "SYNONYM": "Synonym", "ANTONYM": "Antonym" },
+  "action": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "remove": "Remove",
+    "rename": "Rename"
+  },
+  "confirm": { "deleteTerm": "Delete this term from the dictionary?", "deleteTopic": "Delete this topic?" },
+  "form": {
+    "newTitle": "New term",
+    "editTitle": "Edit term",
+    "hint": "Enter the term in at least one language. The rest can be filled in later."
+  },
+  "topics": {
+    "title": "Topics",
+    "newTitle": "New topic",
+    "nameRu": "Name in Russian",
+    "nameEn": "Name in English",
+    "nameUz": "Name in Uzbek",
+    "termCount": "Terms: {{count}}"
+  },
+  "errors": {
+    "TERM_NAME_REQUIRED": "Enter the term in at least one language.",
+    "TOPIC_IN_USE": "This topic still has terms, so it cannot be deleted.",
+    "TOPIC_NAMES_REQUIRED": "Fill in the topic name in all three languages.",
+    "UNKNOWN": "Something went wrong. Please try again."
+  }
+}

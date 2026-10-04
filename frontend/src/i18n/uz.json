@@ -1,0 +1,55 @@
+{
+  "appTitle": "Islomiy moliya lug'ati",
+  "nav": { "dictionary": "Lug'at", "add": "So'z qo'shish", "topics": "Mavzular" },
+  "language": "Til",
+  "textSize": { "label": "Matn o'lchami", "small": "Kichik", "normal": "Oddiy", "large": "Katta" },
+  "search": { "label": "Qidiruv", "hint": "So'zni uch tildan istalganida yozing", "clear": "Qidiruvni tozalash" },
+  "allTopics": "Barcha mavzular",
+  "noTopic": "Mavzusiz",
+  "found": "Topilgan so'zlar: {{count}}",
+  "empty": "Hech narsa topilmadi. Boshqa so'z yozib ko'ring yoki qidiruvni tozalang.",
+  "loading": "Yuklanmoqda...",
+  "loadError": "Ma'lumotlarni yuklab bo'lmadi. Server ishlayotganini tekshiring.",
+  "notFound": "So'z topilmadi.",
+  "back": "Lug'atga qaytish",
+  "lang": { "ru": "Ruscha", "en": "Inglizcha", "uz": "O'zbekcha" },
+  "field": { "term": "So'z", "definition": "Ta'rif", "example": "Misol", "topic": "Mavzu" },
+  "notFilled": "to'ldirilmagan",
+  "related": {
+    "title": "Bog'liq so'zlar",
+    "find": "Bog'lash uchun so'zni toping",
+    "type": "Bog'lanish turi",
+    "none": "Hozircha bog'liq so'zlar yo'q."
+  },
+  "relation": { "SEE_ALSO": "Shuningdek qarang", "SYNONYM": "Sinonimlar", "ANTONYM": "Antonimlar" },
+  "relationOne": { "SEE_ALSO": "Shuningdek qarang", "SYNONYM": "Sinonim", "ANTONYM": "Antonim" },
+  "action": {
+    "edit": "Tahrirlash",
+    "delete": "O'chirish",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "add": "Qo'shish",
+    "remove": "Olib tashlash",
+    "rename": "Nomini o'zgartirish"
+  },
+  "confirm": { "deleteTerm": "Bu so'z lug'atdan o'chirilsinmi?", "deleteTopic": "Bu mavzu o'chirilsinmi?" },
+  "form": {
+    "newTitle": "Yangi so'z",
+    "editTitle": "So'zni tahrirlash",
+    "hint": "So'zni kamida bitta tilda kiriting. Qolganini keyinroq to'ldirish mumkin."
+  },
+  "topics": {
+    "title": "Mavzular",
+    "newTitle": "Yangi mavzu",
+    "nameRu": "Ruscha nomi",
+    "nameEn": "Inglizcha nomi",
+    "nameUz": "O'zbekcha nomi",
+    "termCount": "So'zlar: {{count}}"
+  },
+  "errors": {
+    "TERM_NAME_REQUIRED": "So'zni kamida bitta tilda kiriting.",
+    "TOPIC_IN_USE": "Bu mavzuda so'zlar bor, shuning uchun uni o'chirib bo'lmaydi.",
+    "TOPIC_NAMES_REQUIRED": "Mavzu nomini uchala tilda to'ldiring.",
+    "UNKNOWN": "Xatolik yuz berdi. Qayta urinib ko'ring."
+  }
+}

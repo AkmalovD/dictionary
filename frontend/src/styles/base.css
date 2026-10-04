@@ -1,0 +1,699 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-text);
+  line-height: 1.55;
+}
+
+h1, h2, h3, p, ul, fieldset {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+fieldset {
+  border: 0;
+  min-width: 0;
+}
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+a {
+  color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Header */
+
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.header__top,
+.page {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+}
+.header__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 0.75rem;
+}
+.header__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.header__settings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--page);
+  border-radius: var(--radius-pill);
+}
+.switch--surface {
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.switch__label {
+  margin: 0 0.4rem 0 0.8rem;
+  color: var(--ink-soft);
+}
+.switch__option {
+  min-height: calc(var(--target) - 0.5rem);
+  padding: 0 1rem;
+  background: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  cursor: pointer;
+}
+.switch__option:hover {
+  background: var(--line);
+}
+.switch__option[aria-pressed='true'] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+/* Page links sit in one rounded track; adding a term is the main action,
+   so it stands apart as a filled button. */
+.nav__group {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--page);
+  border-radius: var(--radius-pill);
+}
+.nav__link {
+  display: flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 1.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+.nav__link:hover {
+  background: var(--line);
+  color: var(--ink);
+}
+.nav__link.active {
+  background: var(--ink);
+  color: var(--surface);
+}
+.nav__add {
+  gap: 0.5rem;
+  min-height: calc(var(--target) + 0.5rem);
+  padding-inline: 1.5rem;
+}
+.nav__add span {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.page {
+  padding-block: 2rem 4rem;
+}
+
+/* Shared pieces */
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.hint {
+  color: var(--ink-soft);
+}
+.count {
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.status {
+  padding: 1rem 0;
+  font-size: 1.1rem;
+}
+.status--error {
+  margin: 1rem 0;
+  padding: 0.9rem 1.2rem;
+  background: var(--danger-tint);
+  border-radius: var(--radius);
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  min-height: var(--target);
+  padding: 0.55rem 0.95rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+}
+textarea.input {
+  display: block;
+  resize: vertical;
+  line-height: 1.5;
+}
+.input--large {
+  min-height: 3.6rem;
+  padding-inline: 1.3rem;
+  border-radius: var(--radius-pill);
+  font-size: 1.3rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--target);
+  padding: 0.4rem 1.5rem;
+  background: var(--surface);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover {
+  border-color: var(--ink);
+}
+.button--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+.button--primary:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+.button--danger {
+  background: var(--danger-tint);
+  border-color: var(--danger-tint);
+  color: var(--danger);
+}
+.button--danger:hover {
+  border-color: var(--danger);
+}
+.button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Dictionary */
+
+.search__label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.search__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.search__row .input {
+  flex: 1 1 16rem;
+  width: auto;
+}
+.search__row .button {
+  min-height: 3.6rem;
+}
+.search .hint {
+  margin: 0.5rem 0 0 1.3rem;
+}
+
+.dictionary__body {
+  display: grid;
+  grid-template-columns: 17rem minmax(0, 1fr);
+  align-items: start;
+  gap: 2.5rem;
+  margin-top: 2.25rem;
+}
+
+.topics-nav {
+  padding: 1.1rem 0.75rem 0.75rem;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.topics-nav .section-title {
+  padding-inline: 0.75rem;
+}
+.topics-nav__list {
+  margin-top: 0.5rem;
+}
+.topics-nav__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  min-height: var(--target);
+  padding: 0.45rem 0.75rem;
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  text-align: left;
+  line-height: 1.3;
+  cursor: pointer;
+}
+.topics-nav__item:hover {
+  background: var(--page);
+}
+.topics-nav__item[aria-current='true'] {
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+.topics-nav__item[aria-current='true'] .count {
+  color: inherit;
+}
+.topics-nav__select {
+  display: none;
+  margin-top: 0.6rem;
+}
+
+.results__count {
+  color: var(--ink-soft);
+}
+.results__list {
+  margin-top: 1rem;
+}
+.group {
+  margin-top: 2rem;
+}
+.group:first-child {
+  margin-top: 0;
+}
+.group__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.term-row {
+  position: relative;
+  margin-top: 0.75rem;
+  padding: 1.1rem 1.4rem 1.2rem;
+  background: var(--surface);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.term-row:hover {
+  border-color: var(--accent);
+}
+.term-row__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+/* Makes the whole card open the term, not only its name. */
+.term-row__name::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.term-row__name:focus-visible {
+  outline: none;
+}
+.term-row:has(.term-row__name:focus-visible) {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.term-row__others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.25rem;
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+.lang-tag {
+  display: inline-block;
+  margin-right: 0.15rem;
+  padding: 0.05rem 0.5rem;
+  background: var(--page);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.term-row__definition {
+  max-width: var(--measure);
+  margin-top: 0.5rem;
+  color: var(--ink-soft);
+}
+
+/* Term page */
+
+.back-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  min-height: var(--target);
+  font-weight: 600;
+}
+.term {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.term__topic {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.2rem 0.9rem;
+  background: var(--accent-tint);
+  border-radius: var(--radius-pill);
+  color: var(--accent-dark);
+  font-weight: 500;
+}
+.term__title {
+  margin-top: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.term__lang,
+.term__related {
+  margin-top: 1rem;
+  padding: 1.25rem 1.5rem 1.4rem;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.term__lang:first-of-type {
+  margin-top: 1.5rem;
+}
+.term__name {
+  margin-top: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.term__definition {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+.term__example {
+  margin-top: 0.9rem;
+  padding: 0.75rem 1rem;
+  background: var(--page);
+  border-radius: var(--radius);
+}
+.term__example-label {
+  font-weight: 600;
+}
+.related-group {
+  margin-top: 0.75rem;
+}
+.related-group__title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.related-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.related-group__list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  padding: 0 1.2rem;
+  background: var(--accent-tint);
+  border-radius: var(--radius-pill);
+  color: var(--accent-dark);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.related-group__list a:hover {
+  text-decoration: underline;
+}
+.term > .actions {
+  margin-top: 2rem;
+}
+
+/* Forms */
+
+.form {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.form > .hint {
+  margin-top: 0.5rem;
+}
+.form__langs {
+  width: fit-content;
+  margin-top: 1.25rem;
+}
+.form__langs + .fieldset {
+  margin-top: 0.75rem;
+}
+.fieldset {
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.fieldset__legend {
+  float: left;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.fieldset__legend + * {
+  clear: both;
+}
+.field {
+  margin-bottom: 1rem;
+}
+.field:last-child {
+  margin-bottom: 0;
+}
+.field__label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.form > .actions {
+  margin-top: 1.75rem;
+}
+
+.picker__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 13rem auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.picker__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.picker .field__label {
+  margin-top: 1.25rem;
+}
+.picker__matches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.picker__matches:empty {
+  margin-top: 0;
+}
+
+.topic-list {
+  margin-top: 1.5rem;
+}
+.topic-list__item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 0.75rem;
+  padding: 1.1rem 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+}
+.topic-list__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.topic-form {
+  grid-column: 1 / -1;
+}
+.topic-form .actions {
+  margin-top: 1rem;
+}
+
+@media (max-width: 52rem) {
+  .header__top,
+  .page {
+    padding-inline: 1rem;
+  }
+  .dictionary__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+  .topics-nav {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .topics-nav .section-title {
+    padding-inline: 0;
+  }
+  .topics-nav__list {
+    display: none;
+  }
+  .topics-nav__select {
+    display: block;
+  }
+  .term__title {
+    font-size: 2.1rem;
+  }
+  .picker__item,
+  .topic-list__item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* On screens with room for it, the dictionary fills the window: search
+   and topics stay in place and only the cards scroll. */
+@media (min-width: 52rem) and (min-height: 38rem) {
+  #root:has(.dictionary) {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+  }
+  #root:has(.dictionary) .page {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+  }
+  .dictionary,
+  .results {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .dictionary {
+    height: 100%;
+  }
+  .dictionary__body {
+    flex: 1;
+    align-items: stretch;
+    min-height: 0;
+  }
+  .topics-nav {
+    align-self: start;
+    max-height: calc(100% - 1.5rem);
+    overflow-y: auto;
+  }
+  /* Padding and matching negative margin keep card shadows and focus
+     outlines from being cut off at the edges of the scrolling area. */
+  .results__list {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    margin-inline: -0.75rem;
+    padding: 0.25rem 0.75rem 2rem;
+    scrollbar-gutter: stable;
+  }
+  /* Tighter spacing above the cards leaves them more of the window. */
+  #root:has(.dictionary) .page {
+    padding-top: 1.25rem;
+  }
+  .search {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.25rem;
+  }
+  .search__label {
+    margin-bottom: 0;
+  }
+  .search .hint {
+    grid-column: 2;
+  }
+  .dictionary__body {
+    margin-top: 1.25rem;
+  }
+}

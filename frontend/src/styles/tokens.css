@@ -1,0 +1,38 @@
+:root {
+  /* Body text on both backgrounds is above 7:1 contrast. */
+  --page: #f3f6f4;
+  --surface: #ffffff;
+  --ink: #17211c;
+  --ink-soft: #4b5750;
+  --line: #dde4e0;
+  /* Edges of inputs and buttons, dark enough to be seen on white. */
+  --line-strong: #8a968f;
+  --accent: #0b6b4d;
+  --accent-dark: #084f39;
+  --accent-tint: #e2f1ea;
+  --accent-ink: #ffffff;
+  --danger: #a3221a;
+  --danger-tint: #fcebe9;
+
+  --font-text: 'Golos Text', 'Helvetica Neue', Arial, sans-serif;
+
+  --radius: 0.75rem;
+  --radius-card: 1.1rem;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(23, 33, 28, 0.06), 0 4px 14px rgba(23, 33, 28, 0.05);
+  --ring: 0 0 0 4px rgba(11, 107, 77, 0.25);
+  /* Smallest height of anything clickable. */
+  --target: 3rem;
+  --measure: 40rem;
+}
+
+/* Everything is sized in rem, so the text-size switch scales the whole page. */
+html {
+  font-size: 19px;
+}
+html[data-text-size='small'] {
+  font-size: 16px;
+}
+html[data-text-size='large'] {
+  font-size: 23px;
+}
