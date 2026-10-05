@@ -55,7 +55,8 @@ export class TermsService {
       include: { topic: true },
     });
 
-    // SQLite orders Cyrillic by code point, so sorting is done here.
+    // Sorted here so the order follows the reader's language, not the
+    // database collation.
     const collator = new Intl.Collator(COLLATOR_LOCALE[lang]);
     const named = rows
       .map((term) => ({ term, name: displayName(term, lang) }))

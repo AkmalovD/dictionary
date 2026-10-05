@@ -6,6 +6,8 @@
     "dev": "nest start --watch",
     "build": "nest build",
     "start": "node dist/main.js",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate && prisma migrate deploy",
     "test": "jest --config test/jest-e2e.json --runInBand",
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed"

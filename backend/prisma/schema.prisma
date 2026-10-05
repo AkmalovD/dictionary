@@ -3,8 +3,10 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  // Pooled Neon address for the app; migrations need the direct one.
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Topic {
@@ -27,8 +29,8 @@ model Term {
   exampleRu    String   @default("")
   exampleEn    String   @default("")
   exampleUz    String   @default("")
-  // Lower-cased, normalised copy of names and definitions. SQLite's LIKE is
-  // case-insensitive for ASCII only, so Cyrillic search goes through this column.
+  // Lower-cased, normalised copy of names and definitions (apostrophe
+  // variants and ё/е unified), so search is a plain substring match.
   searchText   String   @default("")
   topicId      Int?
   topic        Topic?   @relation(fields: [topicId], references: [id])
